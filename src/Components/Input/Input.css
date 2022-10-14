@@ -1,0 +1,23 @@
+.--katana-input {
+	color: white;
+	border: 2px solid white;
+	padding: 0.7rem 1rem;
+	outline: none;
+	background-size: 200% 100%;
+	background-image: linear-gradient(to right, black 50%, white 50%);
+	transition: background-position 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.--katana-input:focus {
+	color: black;
+	background-position: -100% 0;
+}
+
+.--katana-input:focus::placeholder {
+	color: black;
+}
+
+.--katana-input::placeholder {
+	color: white;
+	mix-blend-mode: difference;
+}

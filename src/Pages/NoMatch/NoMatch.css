@@ -1,0 +1,28 @@
+.no-match {
+	height: calc(100vh - 77px);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3px
+}
+
+.no-match__block {}
+
+.no-match__header {
+	font-size: 7em;
+}
+
+.no-match__description {
+	font-size: 3em;
+	color: dimgray;
+}
+
+.no-match__solution {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 2em;
+}
+
+.no-match__link {
+	color: black
+}
