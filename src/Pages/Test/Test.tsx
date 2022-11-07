@@ -1,8 +1,8 @@
-import React, { FC, } from 'react'
-import { Never, } from 'Types'
-import './Test.css'
+import React, { FC } from 'react'
 
-const Test: FC<Never> = () => {
+import './Test.scss'
+
+const Test: FC = () => {
 	return <h1>Test</h1>
 }
 

@@ -1,15 +1,16 @@
 import React from 'react'
-import './Layout.css'
+import { Outlet } from 'react-router-dom'
 
-import { Outlet, } from 'react-router-dom'
 import NavBar from '../NavBar'
+
+import './Layout.scss'
 
 
 
 const Layout = () => {
 	return <>
 		<NavBar />
-		<main className='container'>
+		<main>
 			<Outlet />
 		</main>
 	</>

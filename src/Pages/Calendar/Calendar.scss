@@ -1,0 +1,9 @@
+.Calendar {
+	& > .Calendar-Images {
+		border: 5px solid;
+		padding: 15px;
+		& > .Calendar-Image {
+			background: white;
+		}
+	}
+}

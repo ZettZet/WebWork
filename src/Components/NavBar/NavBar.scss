@@ -1,0 +1,25 @@
+@import '../../katana/katana.scss';
+
+.nav-bar {
+	width: 100vw;
+	background-color: $--katana-black;
+	color: $--katana-white;
+	padding: 15px;
+	display: flex;
+	align-items: center;
+	gap: 15px;
+	flex-wrap: wrap;
+}
+
+.nav-bar__logo {
+	font-size: 2em;
+	padding: 3px 15px;
+	width: fit-content;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.nav-bar__link {
+	padding: 3px 15px;
+	font-size: 1.5em;
+}

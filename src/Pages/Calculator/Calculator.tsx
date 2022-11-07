@@ -1,9 +1,37 @@
-import React, { FC, } from 'react'
-import { Never, } from 'Types'
-import './Calculator.css'
+import React, { FC, useReducer } from 'react'
+import { cn } from '@bem-react/classname'
 
-const Calculator: FC<Never> = () => {
-	return <h1>Calculator</h1>
+import { Button, Stack, TextField } from '../../katana'
+import Box from '../../katana/Box'
+
+import { calculatorInitialState, reducer } from './Logic'
+
+import './Calculator.scss'
+
+const cnCalculator = cn('Calculator')
+
+const structure = [
+	[7, 8, 9, '/'],
+	[4, 5, 6, 'x'],
+	[1, 2, 3, '-'],
+	['=', 0, 'C', '+']
+] as const
+
+const Calculator: FC = () => {
+	const [{ current }, dispatch] = useReducer(reducer, calculatorInitialState)
+
+	const cnButton = cnCalculator('Button')
+
+	return <Stack direction='horizontal'>
+		<Box className={cnCalculator()} black>
+			<TextField className={cnCalculator('Input')} value={current} />
+			{structure.map(row => (
+				<Box key={row.join('')}>
+					{row.map(elem => <Button onClick={() => dispatch(elem)} className={cnButton} key={elem}>{elem}</Button>)}
+				</Box>))
+			}
+		</Box >
+	</Stack>
 }
 
 export default Calculator

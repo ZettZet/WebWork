@@ -1,10 +1,11 @@
-import About from './About'
 import Calculator from './Calculator'
+import Calendar from './Calendar'
 import Home from './Home'
 import NoMatch from './NoMatch'
+import Pendulum from './Pendulum'
+import Polygon from './Polygon'
 import Presentation from './Presentation'
-import ShoppingCart from './ShoppingCart'
 import Test from './Test'
 
 
-export { About, Calculator, Home, Presentation, ShoppingCart, Test, NoMatch, }
+export { Calendar, Calculator, Home, Presentation, Pendulum, Test, NoMatch, Polygon }

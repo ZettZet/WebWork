@@ -1,5 +1,6 @@
 import React from 'react'
-import style from './Presentation.css'
+
+import './Presentation.scss'
 
 const Presentation = () => {
 	return <h1>Presentation</h1>

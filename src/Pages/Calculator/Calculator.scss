@@ -1,0 +1,16 @@
+.Calculator {
+  padding: 15px;
+
+  & .Calculator-Button {
+    padding: 15px;
+    font-size: 2rem;
+    width: 75px;
+    height: 75px;
+  }
+
+  & > .Calculator-Input > input {
+    width: 300px;
+    padding: 10px 5px;
+    font-size: 2rem;
+  }
+}

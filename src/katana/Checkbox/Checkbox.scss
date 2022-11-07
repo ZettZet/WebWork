@@ -1,0 +1,8 @@
+@import '../katana.scss';
+
+.katana-Checkbox {
+	border: 2px solid $--katana-black;
+	& > input {
+		// display: none;
+	}
+}
