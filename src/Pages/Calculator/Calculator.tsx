@@ -1,7 +1,7 @@
 import React, { FC, useReducer } from 'react'
 import { cn } from '@bem-react/classname'
 
-import { Button, Stack, TextField } from '../../katana'
+import { Button, Stack, Text } from '../../katana'
 import Box from '../../katana/Box'
 
 import { calculatorInitialState, reducer } from './Logic'
@@ -22,16 +22,22 @@ const Calculator: FC = () => {
 
 	const cnButton = cnCalculator('Button')
 
-	return <Stack direction='horizontal'>
-		<Box className={cnCalculator()} black>
-			<TextField className={cnCalculator('Input')} value={current} />
-			{structure.map(row => (
-				<Box key={row.join('')}>
-					{row.map(elem => <Button onClick={() => dispatch(elem)} className={cnButton} key={elem}>{elem}</Button>)}
-				</Box>))
-			}
-		</Box >
-	</Stack>
+	return (
+		<Stack direction="horizontal">
+			<Box className={cnCalculator()} black>
+				<Text className={cnCalculator('Input')} value={current} />
+				{structure.map((row) => (
+					<Box key={row.join('')}>
+						{row.map((elem) => (
+							<Button onClick={() => dispatch(elem)} className={cnButton} key={elem}>
+								{elem}
+							</Button>
+						))}
+					</Box>
+				))}
+			</Box>
+		</Stack>
+	)
 }
 
 export default Calculator

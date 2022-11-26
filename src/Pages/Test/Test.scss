@@ -1,0 +1,29 @@
+.Test {
+	.Test-Button {
+		padding: 5px 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		font-size: large;
+	}
+
+	.Test-Variant {
+		padding: 5px 15px;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-size: 1rem;
+	}
+
+	.Test-Single {
+		border: 2px solid black;
+		padding: 20px;
+
+		&.Test-Single_state_incorrect {
+			border-color: red;
+		}
+
+		&.Test-Single_state_correct {
+			border-color: green;
+		}
+	}
+}

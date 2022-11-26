@@ -17,32 +17,21 @@ const Home: FC = () => {
 					crossAxis="start"
 					spacing={[15, 'px']}
 				>
-					<Image
-						src={picture}
-						alt="Avatar"
-						shape="circle"
-						scale={[200, 'px']}
-					/>
+					<Image src={picture} alt="Avatar" shape="circle" scale={[200, 'px']} />
 
 					<Typography size={[1.2, 'rem']} as="p">
-						My name is Fedor Kuznetsov. I was born in Ufa in 2000.
-						There for I&apos;m 22 at this moment.
+						My name is Fedor Kuznetsov. I was born in Ufa in 2000. There for I&apos;m 22
+						at this moment.
 					</Typography>
 					<Typography size={[1.2, 'rem']} as="p">
 						You can check my profiles or even write me an{' '}
 						<a href="mailto:thanatocs@gmail.com"> email</a>
 					</Typography>
 
-					<Link
-						className="Home_profile_link"
-						to="https://github.com/ZettZet"
-					>
+					<Link className="Home_profile_link" to="https://github.com/ZettZet">
 						Github
 					</Link>
-					<Link
-						className="Home_profile_link"
-						to="https://vk.com/munzamt"
-					>
+					<Link className="Home_profile_link" to="https://vk.com/munzamt">
 						VK
 					</Link>
 				</Stack>

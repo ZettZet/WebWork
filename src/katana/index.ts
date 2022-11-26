@@ -4,12 +4,12 @@ import Checkbox from './Checkbox'
 import Image from './Image'
 import Link from './Link'
 import NavLink from './NavLink'
-import NumberField from './NumberField'
+import Numbers from './Numbers'
 import Radio from './Radio'
 import Section from './Section'
 import Spacer from './Spacer'
 import Stack from './Stack'
-import TextField from './TextField'
+import Text from './Text'
 import Typography from './Typography'
 
 export {
@@ -19,11 +19,11 @@ export {
 	Checkbox,
 	Link,
 	NavLink,
-	NumberField,
+	Numbers,
 	Radio,
 	Section,
 	Spacer,
-	TextField,
+	Text,
 	Typography,
 	Stack
 }

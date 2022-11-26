@@ -11,7 +11,11 @@ type KatanaSectionProps = ComponentProps<typeof defaultElement> & KatanaMixin
 const Section: FC<KatanaSectionProps> = (props) => {
 	const { className, children, black, ...rest } = props
 	const newClassName = mergecn(cnSection({ black }), className)
-	return <section className={newClassName} {...rest} style={{ width: width(), height: height() }}>{childrenWithProps(children, { black })}</section>
+	return (
+		<section className={newClassName} {...rest} style={{ width: width(), height: height() }}>
+			{childrenWithProps(children, { black })}
+		</section>
+	)
 }
 
 export default Section

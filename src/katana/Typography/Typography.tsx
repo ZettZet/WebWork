@@ -14,16 +14,20 @@ type KatanaTypographyOwnProps = {
 	as?: PossibleTag
 	size?: CssValue
 }
-type KatanaTypographyProps<E extends PossibleTag = typeof defaultElement> = ComponentProps<E> & KatanaTypographyOwnProps & KatanaMixin
-
+type KatanaTypographyProps<E extends PossibleTag = typeof defaultElement> = ComponentProps<E> &
+	KatanaTypographyOwnProps &
+	KatanaMixin
 
 const Typography: FC<KatanaTypographyProps> = (props) => {
 	const { as, className, children, black, size, ...rest } = props
 	const Tag = as ?? defaultElement
 	const newClassName = mergecn(cnTypography({ black }), className)
 
-	return <Tag className={newClassName} style={{ fontSize: size?.join('') }} {...rest}>{children}</Tag>
+	return (
+		<Tag className={newClassName} style={{ fontSize: size?.join('') }} {...rest}>
+			{children}
+		</Tag>
+	)
 }
 
 export default Typography
-

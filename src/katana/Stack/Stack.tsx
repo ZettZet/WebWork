@@ -23,10 +23,18 @@ export type StackOwnProps = {
 type KatanaVStackProps = StackOwnProps & KatanaMixin
 
 const Stack: FC<KatanaVStackProps> = (props) => {
-	const { className, spacing, shrink, grow, mainAxis, crossAxis, black, children, direction } = props
+	const { className, spacing, shrink, grow, mainAxis, crossAxis, black, children, direction } =
+		props
 	const newClassName = mergecn(cnStack({ black, mainAxis, crossAxis, direction }), className)
 
-	return <div style={{ gap: spacing?.join(''), flexShrink: shrink, flexGrow: grow }} className={newClassName}>{childrenWithProps(children, { black })}</div>
+	return (
+		<div
+			style={{ gap: spacing?.join(''), flexShrink: shrink, flexGrow: grow }}
+			className={newClassName}
+		>
+			{childrenWithProps(children, { black })}
+		</div>
+	)
 }
 
 export default Stack

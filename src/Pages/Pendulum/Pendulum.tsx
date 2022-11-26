@@ -1,16 +1,19 @@
 import React, { ChangeEventHandler, FC, useEffect, useRef, useState } from 'react'
+import { cn } from '@bem-react/classname'
 
-import { Stack } from '../../katana'
+import { Numbers, Stack, Typography } from '../../katana'
 
 import './Pendulum.scss'
 
+const cnPendulum = cn('Pendulum')
+
 const Pendulum: FC = () => {
 	const divRef = useRef<HTMLDivElement | null>(null)
-	const [axis, setAxis] = useState<{ big: number, small: number }>({ big: 100, small: 150 })
+	const [axis, setAxis] = useState<{ big: number; small: number }>({ big: 100, small: 150 })
 	const [angle, setAngle] = useState<number>(0)
 
 	const onChange: ChangeEventHandler<HTMLInputElement> = (event) => {
-		setAxis(prev => ({ ...prev, [event.target.id]: Number(event.target.value) }))
+		setAxis((prev) => ({ ...prev, [event.target.id]: Number(event.target.value) }))
 	}
 
 	useEffect(() => {
@@ -28,20 +31,34 @@ const Pendulum: FC = () => {
 		divRef.current.style.top = `${h / 2 + x - selfH / 2}px`
 		divRef.current.style.left = `${w / 2 + y - selfW / 2}px`
 		setTimeout(() => {
-			setAngle(prev => prev + 0.01)
+			setAngle((prev) => prev + 0.01)
 		}, 5)
 	}, [angle, axis])
 
-	return <Stack direction='vertical' spacing={[15, 'px']}>
-		<div className="container" style={{ width: 2 * axis.small, height: 2 * axis.big }}>
-			<div ref={divRef} className='circle' />
-		</div>
-		<label htmlFor="big">Bigger axis</label>
-		<input id="big" type="number" value={axis.big} onChange={onChange} />
-		<label htmlFor="small">Bigger axis</label>
-		<input id="small" type="number" value={axis.small} onChange={onChange} />
-	</Stack>
+	return (
+		<Stack direction="vertical" spacing={[15, 'px']}>
+			<div
+				className={cnPendulum('Container')}
+				style={{ width: 2 * axis.small, height: 2 * axis.big }}
+			>
+				<div ref={divRef} className={cnPendulum('Circle')} />
+			</div>
+			<Typography size={[1.5, 'rem']}>Bigger axis</Typography>
+			<Numbers
+				className={cnPendulum('Number')}
+				id="big"
+				value={axis.big}
+				onChange={onChange}
+			/>
+			<Typography size={[1.5, 'rem']}>Smaller axis</Typography>
+			<Numbers
+				className={cnPendulum('Number')}
+				id="small"
+				value={axis.small}
+				onChange={onChange}
+			/>
+		</Stack>
+	)
 }
 
 export default Pendulum
-

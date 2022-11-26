@@ -3,8 +3,8 @@
 .katana-Button {
 	cursor: pointer;
 	border: 2px solid $--katana-black;
-	color: $--katana-white;
 	background: $--katana-black;
+	color: $--katana-white;
 	position: relative;
 	overflow: hidden;
 
@@ -20,7 +20,7 @@
 		transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
 	}
 
-	&>span {
+	& > span {
 		position: relative;
 		mix-blend-mode: difference;
 	}
@@ -30,7 +30,7 @@
 	}
 
 	&:active {
-		&>span {
+		& > span {
 			mix-blend-mode: normal;
 		}
 
@@ -46,7 +46,7 @@
 		}
 
 		&:active {
-			&>span {
+			& > span {
 				mix-blend-mode: normal;
 			}
 
@@ -55,7 +55,7 @@
 
 		&.katana-Button_positive,
 		&.katana-Button_negative {
-			&>span {
+			& > span {
 				color: $--katana-white;
 			}
 		}
@@ -64,7 +64,7 @@
 	&.katana-Button_negative,
 	&.katana-Button_positive {
 		&:active {
-			&>span {
+			& > span {
 				mix-blend-mode: normal;
 			}
 		}
@@ -85,5 +85,4 @@
 			background: $--katana-accent-positive;
 		}
 	}
-
 }

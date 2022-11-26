@@ -1,4 +1,4 @@
-.circle {
+.Pendulum-Circle {
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
@@ -6,6 +6,11 @@
 	position: relative;
 }
 
-.container {
+.Pendulum-Container {
 	border: 1px solid black;
+}
+
+.Pendulum-Number > input {
+	padding: 10px 5px;
+	font-size: 1rem;
 }

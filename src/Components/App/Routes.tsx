@@ -1,16 +1,7 @@
 import React, { FC } from 'react'
 import { Route, Routes } from 'react-router'
 
-import {
-	Calculator,
-	Calendar,
-	Home,
-	NoMatch,
-	Pendulum,
-	Polygon,
-	Presentation,
-	Test
-} from '../../Pages'
+import { Calculator, Calendar, Home, NoMatch, Pendulum, Presentation, Test } from '../../Pages'
 import Layout from '../Layout/'
 
 type RouteElement = {
@@ -51,11 +42,6 @@ export const routes: RouteElement[] = [
 		name: 'Pendulum'
 	},
 	{
-		path: 'polygon',
-		Element: Polygon,
-		name: 'Polygon'
-	},
-	{
 		path: '*',
 		Element: NoMatch,
 		name: 'NoMatch'
@@ -74,9 +60,7 @@ const AppRoutes = () => {
 						return <Route key={path} index element={<Element />} />
 					}
 
-					return (
-						<Route key={path} path={path} element={<Element />} />
-					)
+					return <Route key={path} path={path} element={<Element />} />
 				})}
 			</Route>
 			<Route path="*" element={<NoMatch />} />
